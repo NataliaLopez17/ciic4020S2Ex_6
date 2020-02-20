@@ -302,14 +302,9 @@ public class LinkedList<E> implements List<E> {
 	@Override
 	public List<E> reverse() {
 		List<E> result = new LinkedList<E>();
-        Node prev = null;
-        while(header!= null) {
-        	Node currentNode = this.header.next;
-        	header.next = prev;
-        	prev = header;
-        	header = currentNode;
-        }
-        result = this;
-        return result;
+		for(E element: this) {
+			result.add(0, element);
+		}
+		return result;
 	}
 }
